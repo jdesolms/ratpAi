@@ -72,7 +72,7 @@ def results():
         # return the result json
         return make_response(result)
     else :
-        result = result["fulfillmentText"] = str(type(action))
+        result = result["fulfillmentText"] = "reponse"
         result = jsonify(result)
 
         return make_response(result)
