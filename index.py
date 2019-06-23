@@ -17,7 +17,7 @@ def results():
     action = req.get('queryResult').get('action')
 
     # return a fulfillment response
-    return {'fulfillmentText': 'This is a response from webhook.'}
+    return {'fulfillmentText': 'La ligne est la {}.'.format(action)}
 
 # create a route for webhook
 @app.route('/webhook', methods=['GET', 'POST'])
