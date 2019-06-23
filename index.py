@@ -14,7 +14,7 @@ def results():
     req = request.get_json(force=True)
 
     # fetch action from json
-    action = req.get('parameters').get('number')
+    action = req.get('queryResult').get('action')
 
     # return a fulfillment response
     return {'fulfillmentText': 'La ligne est la {}.'.format(action)}
