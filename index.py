@@ -10,6 +10,7 @@ def index():
 
 # function for responses
 def results():
+    result = {}
     result["fulfillmentText"] = "reponse"
     result = jsonify(result)
 
