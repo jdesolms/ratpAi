@@ -73,13 +73,15 @@ def results():
         return make_response(result)
     else :
         result = result["fulfillmentText"] = str(type(action))
-        return result
+        result = jsonify(result)
+
+        return make_response(result)
 
 # create a route for webhook
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     # return response
-    return make_response(jsonify(results()))
+    return results
 
 
     # run the app
