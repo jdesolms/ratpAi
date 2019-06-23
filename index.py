@@ -18,8 +18,8 @@ def results():
     
     result = req.get("result")
     parameters = result.get("parameters")
-    ligne = parameters.get("ligne")
     return {'fulfillmentText': 'Vous avez demandé '}
+    ligne = parameters.get("ligne")
     # return a fulfillment response
     return {'fulfillmentText': 'Vous avez demandé {}.'.format(ligne)}
 
