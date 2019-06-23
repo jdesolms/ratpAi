@@ -16,8 +16,7 @@ def results():
     # fetch action from json
     action = req.get('queryResult').get('action')
     
-    result = req.get("result")
-    return {'fulfillmentText': 'Vous avez demandé '}
+    result = req.get("queryResult")
     parameters = result.get("parameters")
     ligne = parameters.get("ligne")
     # return a fulfillment response
