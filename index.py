@@ -17,9 +17,9 @@ def results():
     action = req.get('queryResult').get('action')
     
     result = req.get("result")
-    return {'fulfillmentText': 'Vous avez demandé '}
     parameters = result.get("parameters")
     ligne = parameters.get("ligne")
+    return {'fulfillmentText': 'Vous avez demandé '}
     # return a fulfillment response
     return {'fulfillmentText': 'Vous avez demandé {}.'.format(ligne)}
 
