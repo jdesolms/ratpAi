@@ -70,6 +70,8 @@ def results():
 
         # return the result json
         return make_response(result)
+    else :
+        return result["fulfillmentText"] = str(type(action))
 
 # create a route for webhook
 @app.route('/webhook', methods=['GET', 'POST'])
