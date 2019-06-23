@@ -4,7 +4,7 @@ from flask import Flask, request, make_response, jsonify
 app = Flask(__name__)
 
 # default route
-@app.route('/)
+@app.route('/')
 def index():
     return 'Hello World!'
 
@@ -24,6 +24,8 @@ def results():
 def webhook():
     # return response
     return make_response(jsonify(results()))
+
+
 
     # run the app
 if __name__ == '__main__':
