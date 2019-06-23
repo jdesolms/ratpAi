@@ -15,9 +15,12 @@ def results():
 
     # fetch action from json
     action = req.get('queryResult').get('action')
-
+    
+    result = req.get("result")
+    parameters = result.get("parameters")
+    ligne = parameters.get("ligne")
     # return a fulfillment response
-    return {'fulfillmentText': 'This is a response from webhook.'}
+    return {'fulfillmentText': 'Vous avez demandé {}.'.format(ligne)}
 
 # create a route for webhook
 @app.route('/webhook', methods=['GET', 'POST'])
