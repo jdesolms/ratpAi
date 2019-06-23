@@ -10,6 +10,10 @@ def index():
 
 # function for responses
 def results():
+    result["fulfillmentText"] = "reponse"
+    result = jsonify(result)
+
+    return make_response(result)
     req = request.get_json(force=True)
     action = req.get('queryResult').get('action')
     result = {} # an empty dictionary
