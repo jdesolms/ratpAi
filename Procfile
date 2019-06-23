@@ -1,2 +1,2 @@
-web: gunicorn app:app
-web: python app.py runserver 0.0.0.0:5000
+web: gunicorn index:app
+web: python index.py runserver 0.0.0.0:5000
