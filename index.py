@@ -12,6 +12,7 @@ def index():
 def results():
     req = request.get_json(force=True)
     action = req.get('queryResult').get('action')
+    result = {} # an empty dictionary
 
     if action == "actions.intent.MAIN":
         # your action statements here
@@ -20,7 +21,7 @@ def results():
         # i am going to use Dialogflow JSON reponse format
         # first build result json
 
-        result = {} # an empty dictionary
+        
 
         # fulfillment text is the default response that is returned to the dialogflow request
         result["fulfillmentText"] = "your response message here"
