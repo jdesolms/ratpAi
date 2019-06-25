@@ -25,7 +25,7 @@ def results():
     response = scrap.scrapForLine(ligne)
 
     # return a fulfillment response
-    return {'fulfillmentText': response}
+    return {'fulfillmentText': 'Vous avez demandé .'}
 
 # create a route for webhook
 @app.route('/webhook', methods=['GET', 'POST'])
