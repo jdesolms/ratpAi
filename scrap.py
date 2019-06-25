@@ -13,5 +13,6 @@ def scrapForLine(line):
     for info in info_trafic:
         phrase = 'Le site de la ratp indique : {}'.format(info.findAll('strong')[0].text)
     
-    return phrase
+        return phrase
+    return 'Je n\'ai rien pour vous'
 
