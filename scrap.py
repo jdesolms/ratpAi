@@ -8,11 +8,18 @@ def scrapForLine(line):
     page_content = BeautifulSoup(webpage, "html.parser")
 
     info_trafic = page_content.findAll('div',attrs={"class":"infos-trafic__item"})
-    print(info_trafic)
+
+    phrase ='Pour la ligne {} le site de la RATP me dit: '.format(line)
 
     for info in info_trafic:
-        phrase = 'Le site de la ratp indique : {}'.format(info.findAll('strong')[0].text)
-    
-        return phrase
-    return 'Je n\'ai rien pour vous'
+        if len(info.findAll('span', attrs={"data-ratp-line-key": line})) > 0 :
+            results = info.findAll('p')
+            for result in results : 
+                phrase += result.text
+                phrase += '\n'
+            return phrase
+        else :
+            phrase += 'qu\'il n\'y à pas de souci sur votre ligne.'
+            return phrase
+    return 'Je n\'ai rien pour vous.'
 
