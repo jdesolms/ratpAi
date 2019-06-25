@@ -1,3 +1,5 @@
+import scrap
+
 from flask import Flask, request, make_response, jsonify
 
 # initialize the flask app
@@ -19,8 +21,11 @@ def results():
     result = req.get("queryResult")
     parameters = result.get("parameters")
     ligne = parameters.get("ligne")
+
+    response = scrap.scrapForLine(ligne)
+
     # return a fulfillment response
-    return {'fulfillmentText': 'Vous avez demandé {}.'.format(ligne)}
+    return {'fulfillmentText': response)}
 
 # create a route for webhook
 @app.route('/webhook', methods=['GET', 'POST'])
