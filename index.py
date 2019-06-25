@@ -22,7 +22,7 @@ def results():
     parameters = result.get("parameters")
     ligne = parameters.get("ligne")
 
-    response = scrap.scrapForLine(ligne)
+    response = scrap.scrapForLine(int(ligne))
 
     # return a fulfillment response
     return {'fulfillmentText': response}
